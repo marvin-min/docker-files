@@ -11,6 +11,8 @@
 
 ### mount local data to container:
 
+- doc: https://docs.docker.com/storage/bind-mounts/
+
 ```shell
 docker run -d \
  -p 8888:80\
