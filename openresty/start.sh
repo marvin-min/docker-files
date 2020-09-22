@@ -1,3 +1,3 @@
 #!/bin/bash
-docker build -t op .
-docker run -dp 8888:80 --name op op
+docker build -t marvinmin/op:1.0 .
+docker run -dp 8888:80 --name op marvinmin/op:1.0

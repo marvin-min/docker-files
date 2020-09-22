@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body div:first-of-type {
+  color: red;
+}
+body h5 {
+  color: blue;
+}
