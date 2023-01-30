@@ -3,8 +3,10 @@ services:
   jenkins:
     image: jenkins/jenkins:lts-jdk11
     container_name: jenkins
+    hostname: jenkins.marvin.com
     networks:
-      - jenkins
+      cicd:
+        ipv4_address: 192.168.1.20
     ports:
       - 8080:8080
       - 50000:50000
@@ -19,4 +21,5 @@ volumes:
   jenkins-docker-certs:
 
 networks:
-  jenkins:
+  cicd:
+    external: true

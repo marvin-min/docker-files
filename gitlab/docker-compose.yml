@@ -1,0 +1,26 @@
+version: '3'
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    restart: always
+    hostname: gitlab.marvin.com
+    networks:
+      cicd:
+        ipv4_address: 192.168.1.10
+    ports:
+      - 8888:80
+      - 4443:443
+   
+    volumes:
+      - gitlab-config:/etc/gitlab
+      - gitlab-log:/var/log/gitlab
+      - gitlab-data:/var/opt/gitlab
+volumes:
+  gitlab-config:
+  gitlab-log:
+  gitlab-data:
+
+networks:
+  cicd:
+    external: true
