@@ -1,9 +1,15 @@
+#pre install docker if possible
+#https://github.com/shazChaudhry/docker-jenkins/blob/ee0f386fd1706829b956cb2e723c0f2935496933/Dockerfile
 version: '3.9'
 services:
   jenkins:
     image: jenkins/jenkins:lts-jdk11
     container_name: jenkins
     hostname: jenkins.marvin.com
+    extra_hosts:
+      - "gitlab.marvin.com gitlab:192.168.1.10"
+    user: root
+    privileged: true
     networks:
       cicd:
         ipv4_address: 192.168.1.20
